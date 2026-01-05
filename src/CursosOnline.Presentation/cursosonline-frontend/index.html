@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursos Online - Frontend</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Cursos Online</h1>
+      <p class="header__subtitle">Panel  para gestionar cursos</p>
+    </header>
+
+    <main class="main">
+      <!-- Panel de login -->
+      <section class="panel panel--form" id="login-panel">
+        <h2>Iniciar sesión</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required placeholder="Ej: david@gmail.com" />
+          </div>
+          <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" required placeholder="Ej: David123*" />
+          </div>
+          <button type="submit">Entrar</button>
+        </form>
+      </section>
+
+      <!-- Panel de creación de curso -->
+      <section class="panel panel--form" id="course-panel" hidden>
+        <h2>Nuevo curso</h2>
+        <form id="course-form">
+          <div class="form-group">
+            <label for="title">Título del curso</label>
+            <input type="text" id="title" name="title" required placeholder="Ej: Curso de ASP.NET Core" />
+          </div>
+          <button type="submit">Crear curso</button>
+        </form>
+      </section>
+
+      <!-- Panel de listado de cursos -->
+      <section class="panel panel--list" id="courses-panel" hidden>
+        <div class="panel__header">
+          <div>
+            <h2>Listado de cursos</h2>
+            <div class="filters">
+              <input type="text" id="search-input" placeholder="Buscar por título" />
+              <select id="status-filter">
+                <option value="">Todos</option>
+                <option value="Draft">Borrador</option>
+                <option value="Published">Publicado</option>
+              </select>
+            </div>
+          </div>
+          <button id="logout-button" type="button">Cerrar sesión</button>
+        </div>
+        <div id="message" class="message" hidden></div>
+        <table class="table" id="courses-table">
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="courses-body">
+            <!-- filas cargadas por JS -->
+          </tbody>
+        </table>
+        <div class="pagination" id="pagination">
+          <button id="prev-page" type="button">Anterior</button>
+          <span id="page-info"></span>
+          <button id="next-page" type="button">Siguiente</button>
+        </div>
+      </section>
+
+      <!-- Panel de lecciones por curso -->
+      <section class="panel panel--list" id="lessons-panel" hidden>
+        <div class="panel__header">
+          <h2>Lecciones del curso</h2>
+          <button id="close-lessons" type="button">Cerrar</button>
+        </div>
+        <div id="lessons-message" class="message" hidden></div>
+        <form id="lesson-form" class="form-inline">
+          <div class="form-group">
+            <label for="lesson-title">Nueva lección</label>
+            <input type="text" id="lesson-title" name="lesson-title" required placeholder="Título de la lección" />
+          </div>
+          <button type="submit">Agregar lección</button>
+        </form>
+        <table class="table" id="lessons-table">
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Orden</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="lessons-body">
+            <!-- filas cargadas por JS -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
