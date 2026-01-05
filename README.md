@@ -1,8 +1,11 @@
 # CursosOnline – Backend & Frontend (EN)
 
+<<<<<<< HEAD
 **GitHub repository:**
 https://github.com/David-SilvaDEV/CursosOnline
 
+=======
+>>>>>>> 41522debb7c41b55de0de6cbc3590ce00f2abf77
 A simple **clean architecture** example for an online courses platform, built with **ASP.NET Core 8**, **Entity Framework Core (PostgreSQL)**, and a lightweight **Vite + Vanilla JS** frontend.
 
 It includes:
